@@ -1,6 +1,6 @@
 import React from 'react'
-import Collapses from './Collapses'
 import { GlobalContextProvider } from 'context/GlobalContext'
+import Collapses from './Collapses'
 
 const App = () => {
 	return (

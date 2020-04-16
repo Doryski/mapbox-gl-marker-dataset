@@ -11,7 +11,7 @@ const Map = ReactMapboxGl({
 const MapWrapper = () => {
 	const { addMarker, updateMarker, markers } = useContext(GlobalContext)
 
-	const onClickMap = (e) => {
+	const onMapClick = (e) => {
 		const setLng = e.lngLat.lng
 		const setLat = e.lngLat.lat
 
@@ -21,7 +21,7 @@ const MapWrapper = () => {
 		})
 	}
 
-	const onDragEnd = (id, e) => {
+	const onMarkerDrag = (id, e) => {
 		const newLng = e.lngLat.lng
 		const newLat = e.lngLat.lat
 		const newCoordinates = [newLng, newLat]
@@ -36,9 +36,8 @@ const MapWrapper = () => {
 				height: '50vh',
 				width: '100vw',
 			}}
-			zoom={[1]}
 			onClick={(_, e) => {
-				onClickMap(e)
+				onMapClick(e)
 			}}
 		>
 			<Layer
@@ -54,7 +53,7 @@ const MapWrapper = () => {
 							marker.coordinates[1],
 						]}
 						draggable
-						onDrag={(e) => onDragEnd(marker.id, e)}
+						onDrag={(e) => onMarkerDrag(marker.id, e)}
 					/>
 				))}
 			</Layer>

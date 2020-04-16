@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import { Table, Button } from 'reactstrap';
-import { GlobalContext } from 'context/GlobalContext';
+import React, { useContext } from 'react'
+import { Table, Button } from 'reactstrap'
+import { GlobalContext } from 'context/GlobalContext'
 
 const TableWrapper = () => {
-    const { markers, removeMarker } = useContext(GlobalContext)
-    
-    return (
+	const { markers, removeMarker } = useContext(GlobalContext)
+
+	return (
 		<Table striped hover responsive>
 			<thead>
 				<tr>
@@ -18,16 +18,22 @@ const TableWrapper = () => {
 			<tbody>
 				{markers.map((marker) => (
 					<tr key={marker.id}>
-						<th scope='row'>{String(marker.id).slice(0, 6)}</th>
-						<td>{marker.coordinates[0].toFixed(6)}</td>
-						<td>{marker.coordinates[1].toFixed(6)}</td>
+						<th scope='row' className='align-middle'>
+							{String(marker.id).slice(0, 6)}
+						</th>
+						<td className='align-middle'>
+							{marker.coordinates[0].toFixed(6)}
+						</td>
+						<td className='align-middle'>
+							{marker.coordinates[1].toFixed(6)}
+						</td>
 						<td>
 							<Button
 								color='danger'
-								size='xs'
+								size='sm'
 								onClick={() => removeMarker(marker.id)}
 							>
-								X
+								x
 							</Button>
 						</td>
 					</tr>
@@ -37,7 +43,4 @@ const TableWrapper = () => {
 	)
 }
 
-export default TableWrapper;
-
-
-
+export default TableWrapper

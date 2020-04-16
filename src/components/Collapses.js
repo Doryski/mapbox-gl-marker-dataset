@@ -6,7 +6,7 @@ import { Card, CardHeader, CardBody, Collapse } from 'reactstrap'
 import MapWrapper from './MapWrapper'
 import TableWrapper from './TableWrapper'
 
-function Collapses() {
+const Collapses = () => {
 	// collapse states and functions
 	const [collapses, setCollapses] = React.useState([])
 	const changeCollapse = (collapse) => {
@@ -40,12 +40,7 @@ function Collapses() {
 										changeCollapse(1)
 									}}
 								>
-									Mapa{' '}
-									{collapses.includes(1) ? (
-										<i className='now-ui-icons arrows-1_minimal-up' />
-									) : (
-										<i className='now-ui-icons arrows-1_minimal-down' />
-									)}
+									Map
 								</a>
 							</h5>
 						</CardHeader>
@@ -72,12 +67,7 @@ function Collapses() {
 										changeCollapse(2)
 									}}
 								>
-									Tabela{' '}
-									{collapses.includes(2) ? (
-										<i className='now-ui-icons arrows-1_minimal-up' />
-									) : (
-										<i className='now-ui-icons arrows-1_minimal-down' />
-									)}
+									Table
 								</a>
 							</h5>
 						</CardHeader>

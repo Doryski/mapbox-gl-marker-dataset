@@ -1,20 +1,7 @@
 import React, { createContext, useReducer, useEffect } from 'react'
 import reducer from 'reducers/reducer'
 
-const markers = [
-	{
-		id: 0,
-		coordinates: [-91.395263671875, -0.9145729757782163],
-		},
-	{
-		id: 1,
-		coordinates: [-90.32958984375, -0.6344474832838974],
-	},
-	{
-		id: 2,
-		coordinates: [-91.34033203125, 0.01647949196029245],
-	},
-]
+const markers = []
 
 export const GlobalContext = createContext(markers)
 
